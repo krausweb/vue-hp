@@ -4,7 +4,7 @@
 
 ## Additional
 
-> Used a Gulp + Sass + Autoprefixer
+> Used a Gulp + Sass + Autoprefixer + Normalize + Jade
 
 ## Build Setup
 
