@@ -1,12 +1,12 @@
 <template lang="jade">
-  div#hp
+  div.container
     h1 {{ msg }}
     <!--<chart type="line" dataSet=""></chart>-->
 </template>
 
 <script>
 export default {
-  name: 'hp',
+  name: 'Hp',
   data () {
     return {
       msg: 'Welcome to Home Page App'
@@ -16,5 +16,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import "./hp"
+  @import "./Hp"
 </style>

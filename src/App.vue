@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import hp from './components/hp.vue'
+import Hp from './components/Hp.vue'
 
 export default {
   name: 'app',
   components: {
-    hp
+    Hp
   }
 }
 </script>

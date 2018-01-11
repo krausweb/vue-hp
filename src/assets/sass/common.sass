@@ -1,0 +1,83 @@
+@import "./vars"
+@import "./mixins"
+
+/* ********************* Common Styles ************************** */
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-bold
+
+h1
+  font-size: $font-xl
+
+h2, h3, h4, h5, h6
+  font-size: $font-s
+
+ul, li
+  font-family: $font-regular
+  font-size: $font-m
+
+ul
+  list-style-type: none
+
+li
+  display: inline-block
+
+button,
+input,
+optgroup,
+select,
+textarea
+  font-family: $font-regular
+
+button
+  font-size: $font-xs
+  cursor: pointer
+
+div, p, a
+  font-family: $font-common
+  font-size: $font-s
+  color: $color-text
+
+a
+  text-decoration: none
+  &:hover
+    opacity: 0.8
+
+.container
+  margin: auto auto
+
+.text-white
+  color: $color-white
+
+.logo
+  background: url("/dist/assets/images/logo.png") no-repeat 0 0
+  background-size: auto 21pt
+  &.text
+    font-family: $font-light
+    font-size: $font-s
+
+/* ************************ Desktop version ************************ */
+@media only screen and (min-width: $desktop-min-width)
+  .hide-below-835,
+  .hide-below-640
+    display: inherit
+
+  .container
+    max-width: $desktop-width-container
+
+/* *************************** Tablet version ************************* */
+@media only screen and (min-width: $tablet-min-width) and (max-width: $desktop-max-width)
+  .hide-below-835
+    display: none
+
+  .container
+    max-width: $tablet-width-container
+
+/* ************************** Mobile version ************************* */
+@media only screen and (max-width: $mobile-max-width)
+  .hide-below-835,
+  .hide-below-640
+    display: none
+
+  .container
+    max-width: 100%
