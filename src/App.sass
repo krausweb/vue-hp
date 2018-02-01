@@ -1,0 +1,176 @@
+@import "./assets/sass/vars"
+
+/* *************** Common version ********************* */
+.top-links-language-block
+  padding: 21px 25px 15px 25px
+  .top-links
+    font-family: $font-common
+    font-size: $font-s
+    display: inline-block
+  .language
+    display: inline-block
+    text-transform: uppercase
+    padding-left: 25px
+    li
+      padding: 0
+  .language-link
+    padding: 6px
+    border: 1px solid $color-text
+    opacity: 0.3
+    background-color: $color-gray
+    &.active
+      opacity: 1
+      background-color: initial
+      &:hover
+        opacity: 0.6
+
+.logo-block
+  padding-left: 25px
+  padding-bottom: 7px
+  a
+    display: inline-block
+    width: 160px
+  .logo
+    height: 23px
+    width: 160px
+  .text
+    font-family: $font-light
+
+.top-nav-block
+  align-self: flex-end
+  text-transform: uppercase
+  flex-grow: 1
+  line-height: 30px
+  .search-input-block
+    display: inline-block
+    .search-input
+      box-sizing: border-box
+      width: 100%
+      &.active
+        opacity: 1
+    .search
+      display: inline-block
+      &:before
+        background: url($img_search) no-repeat 0 0
+        background-size: 100% auto
+        width: 22px
+        height: 23px
+        display: inline-block
+        vertical-align: middle
+        content: ""
+        cursor: pointer
+  ul
+    display: inline-block
+    li
+      line-height: $font-s
+
+.content
+  flex-basis: 100%
+
+/* ************************ Desktop version ************************ */
+@media only screen and (min-width: $desktop-min-width)
+  .top-links-language-block
+    flex-basis: 100%
+    text-align: right
+
+  .top-nav-block
+    text-align: right
+    padding-right: 25px
+    .search-input-block
+      .search-input
+        width: 200px
+        transition: opacity .5s
+        opacity: 0
+      .search
+        padding-left: 25px
+        padding-right: 25px
+    li
+      padding-left: $li-padding
+      border-left: 1px solid $color-text
+
+/* *************************** Tablet version ************************* */
+@media only screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width)
+  .logo-block
+    order: 1
+    padding-top: 21px
+
+  .top-links-language-block
+    order: 2
+    flex-grow: 1
+    text-align: right
+
+  .top-nav-block
+    order: 3
+    text-align: right
+    .search-input-block
+      padding-left: 25px
+      box-sizing: border-box
+      width: 39%
+      text-align: left
+      .search-input
+        max-width: 200px
+        opacity: 1
+      .search
+        box-sizing: border-box
+        padding-left: 25px
+    ul
+      box-sizing: border-box
+      width: 61%
+      vertical-align: middle
+      padding-right: 25px
+      li
+        padding-left: $li-padding
+        padding-right: 0
+        margin-left: $li-padding
+        border-left: 1px solid $color-text
+        &:first-child
+          margin-left: 0
+          border-left: 0
+
+  .content
+    order: 4
+
+/* ************************** Mobile version ************************* */
+@media only screen and (max-width: $mobile-max-width)
+  .logo-block
+    order: 1
+    flex-basis: 100%
+    padding-top: 21px
+
+  .top-links-language-block
+    flex-basis: 100%
+    order: 2
+    .top-links
+      width: 70%
+      vertical-align: middle
+      line-height: 30px
+    .language
+      width: 30%
+      box-sizing: border-box
+      text-align: right
+      vertical-align: middle
+      line-height: 30px
+
+  .top-nav-block
+    order: 3
+    flex-basis: 100%
+    padding-left: 25px
+    padding-right: 25px
+    .search-input-block
+      width: 100%
+      padding-bottom: 15px
+      .search-input
+        width: 90%
+        opacity: 1
+        vertical-align: middle
+      .search
+        width: 10%
+        text-align: right
+    ul
+      width: 100%
+      li:nth-child(even)
+        padding-left: $li-padding
+        border-left: 1px solid $color-text
+
+  .content
+    order: 4

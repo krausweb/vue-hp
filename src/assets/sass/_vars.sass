@@ -3,22 +3,19 @@
  */
 
 /* *********************** Main ************************ */
-
 $desktop-min-width: 1200px
-$desktop-max-width: $desktop-min-width - 1
 $desktop-width-container: $desktop-min-width
-$tablet-min-width: 600px
+$tablet-max-width: $desktop-min-width - 1
+$tablet-min-width: 768px
 $tablet-width-container: $tablet-min-width
 $mobile-max-width: $tablet-min-width - 1
-
 
 /* ********************* Colors ************************ */
 $color-text: #333
 $color-white: #FFF
-
+$color-gray: #ccc
 
 /* ***************************** Fonts ************************** */
-
 @font-face
   font-family: 'LinotypeUnivers Regular'
   src: url('/dist/assets/fonts/LinotypeUnivers-BasicRegular.eot')
@@ -37,10 +34,16 @@ $font-bold: 'LinotypeUnivers Bold', Verdana, Arial, sans-serif
 $font-light: 'LinotypeUnivers Light', Verdana, Arial, sans-serif
 $font-common: Verdana, Arial, sans-serif
 
-$font-xxl: 26pt
-$font-xl: 24pt
-$font-l: 18pt
-$font-m: 16pt
-$font-s: 14pt
-$font-xs: 12pt
-$font-xxs: 10pt
+$font-xxl: 26px
+$font-xl: 24px
+$font-l: 18px
+$font-m: 16px
+$font-s: 14px
+$font-xs: 12px
+$font-xxs: 10px
+
+/* ********************* Images ************************* */
+$img_search: '/dist/assets/images/search.png'
+
+/* ********************* Additional vars **************** */
+$li-padding: 25px

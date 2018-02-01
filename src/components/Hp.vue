@@ -1,5 +1,5 @@
 <template lang="jade">
-  div.container
+  div
     h1 {{ msg }}
     <!--<chart type="line" dataSet=""></chart>-->
 </template>
