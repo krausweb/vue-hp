@@ -26,7 +26,8 @@
     "gulp-sourcemaps": "^2.6.3",
     "highcharts": "^6.0.4",
     "normalize.css": "^7.0.0",
-    "vue": "^2.0.1"
+    "vue": "^2.0.1",
+    "vue-l-carousel": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.4",

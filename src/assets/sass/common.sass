@@ -3,7 +3,7 @@
 
 /* ********************* Common Styles ************************** */
 h1, h2, h3, h4, h5, h6
-  font-family: $font-bold
+  font-family: $font-medium
 
 h1
   font-size: $font-xl
@@ -51,13 +51,20 @@ a
   text-decoration: none
   transition: 0.3s
   &:hover
-    opacity: 0.8
+    opacity: 0.7
 
 .container
   margin: 0 auto
   display: flex
   flex-direction: row
   flex-wrap: wrap
+
+.wrapper
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
 
 .text-white
   color: $color-white
@@ -66,6 +73,58 @@ a
   transition: opacity .5s
 .fade-enter, .fade-leave-to
   opacity: 0
+
+.v-carousel
+  width: 100%
+  overflow: hidden
+  position: static
+
+.v-carousel-items
+  overflow: hidden
+  display: flex
+
+.v-carousel-item
+  position: relative
+
+.v-carousel-dots
+  position: absolute
+  bottom: 15px
+  left: 0
+  width: 100%
+  text-align: center
+
+.v-carousel-dot
+  cursor: pointer
+  display: inline-block
+  width: 4px
+  height: 4px
+  margin: 0 10px
+  background: rgba(255, 255, 255, 0.5)
+  &.active
+    background: $color-white
+    cursor: default
+  &:before
+    content: ''
+    width: 10px
+    height: 10px
+    display: block
+    margin-top: -4px
+    margin-left: -4px
+
+.v-carousel-nav
+  display: none
+  cursor: pointer
+  position: absolute
+  line-height: 30px
+  color: #FFF
+  padding: 0 5px
+  background: rgba(0, 0, 0, 0.5)
+  top: 50%
+  margin-top: -15px
+  &.prev
+    left: 0
+  &.next
+    right: 0
 
 /* ************************ Desktop version ************************ */
 @media only screen and (min-width: $desktop-min-width)
