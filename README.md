@@ -6,6 +6,11 @@
 
 > Used a Gulp + Sass + Autoprefixer + Normalize + Jade
 
+## According to Mockup
+
+./mockup.jpg
+![Mockup](./mockup.jpg)
+
 ## Build Setup
 
 ``` bash
