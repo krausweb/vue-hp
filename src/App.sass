@@ -46,8 +46,6 @@
     .search-input
       box-sizing: border-box
       width: 100%
-      &.active
-        opacity: 1
     .search
       display: inline-block
       &:before
@@ -82,8 +80,12 @@
     .search-input-block
       .search-input
         width: 200px
-        transition: opacity .5s
+        visibility: hidden
         opacity: 0
+        transition: visibility 0s, opacity .5s
+        &.active
+          visibility: visible
+          opacity: 1
       .search
         padding-left: 25px
         padding-right: 25px
@@ -112,7 +114,6 @@
       text-align: left
       .search-input
         max-width: 200px
-        opacity: 1
       .search
         box-sizing: border-box
         padding-left: 25px
@@ -164,7 +165,6 @@
       padding-bottom: 15px
       .search-input
         width: 90%
-        opacity: 1
         vertical-align: middle
       .search
         width: 10%
