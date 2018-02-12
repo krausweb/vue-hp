@@ -8,8 +8,7 @@
 
 ## According to Mockup
 
-./mockup.jpg
-![Mockup](./mockup.jpg)
+![Mockup](./mockup.png)
 
 ## Build Setup
 
