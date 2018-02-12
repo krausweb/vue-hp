@@ -13,7 +13,8 @@
         span.text(v-html="logoText")
     div.top-nav-block
       div.search-input-block
-        input.search-input(:placeholder="searchPlaceholder", :class="{'active': searchActive}", v-model.lazy.trim="searchValue", v-on:keyup.enter="searchResultFn()")
+        transition(name="fade")
+          input.search-input(v-if="searchActive", :placeholder="searchPlaceholder", :class="{'active': searchActive}", v-model.lazy.trim="searchValue", v-on:keyup.enter="searchResultFn()")
         span.search(v-on:click="searchActiveFn")
       ul
         li(v-for="nav in topNavList")

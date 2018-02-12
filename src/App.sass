@@ -46,8 +46,6 @@
     .search-input
       box-sizing: border-box
       width: 100%
-      &.active
-        opacity: 1
     .search
       display: inline-block
       &:before
@@ -70,6 +68,11 @@
   flex-basis: 100%
   padding-top: 10px
 
+.fade-enter-active, .fade-leave-active
+  transition: opacity .5s
+.fade-enter, .fade-leave-to
+  opacity: 0
+
 /* ************************ Desktop version ************************ */
 @media only screen and (min-width: $desktop-min-width)
   .top-links-language-block
@@ -82,11 +85,9 @@
     .search-input-block
       .search-input
         width: 200px
-        transition: opacity .5s
-        opacity: 0
       .search
-        padding-left: 25px
-        padding-right: 25px
+        margin-left: 25px
+        margin-right: 25px
     li
       padding-left: $li-padding
       border-left: 1px solid $color-text
