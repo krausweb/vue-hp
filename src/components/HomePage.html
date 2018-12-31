@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div :class="banner.class" v-for="banner in bannerDataList">
+    <carousel v-if="banner.sliderList" :watch-items="banner.sliderList" :auto="0">
+      <carousel-item class="slide" v-for="slider in banner.sliderList">
+        <img :src="slider.src" :title="slider.title"/>
+        <div class="inner-content">
+          <div class="text -links" v-if="slider.links">
+            <ul>
+              <li v-for="link in slider.links">
+                <a class="link" :href="link.link">{{link.text}}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="text -main" v-if="slider.textMain">{{slider.textMain}}</div>
+          <div class="text -detail" v-if="slider.textDetail">{{slider.textDetail}}</div>
+          <div class="text -button" v-if="slider.buttons">
+            <a class="link" :href="button.link" v-if="slider.buttons" v-for="button in slider.buttons">{{button.text}}</a>
+          </div>
+        </div>
+      </carousel-item>
+    </carousel>
+    <div class="inner-content" v-else>
+      <div class="text -links" v-if="banner.links">
+        <ul>
+          <li v-for="link in banner.links"><a class="link" :href="link.link">{{link.text}}</a></li>
+        </ul>
+      </div>
+      <div class="text -main" v-if="banner.textMain">{{banner.textMain}}</div>
+      <div class="text -detail" v-if="banner.textDetail">{{banner.textDetail}}</div>
+      <div class="text -button" v-if="banner.buttons">
+        <a class="link" :href="button.link" v-if="banner.buttons"
+           v-for="button in banner.buttons">{{button.text}}</a>
+      </div>
+    </div>
+  </div>
+</div>

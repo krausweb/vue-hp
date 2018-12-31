@@ -1,34 +1,14 @@
-<template lang="jade">
-  div#app.container
-    div.top-links-language-block
-      ul.top-links
-        li(v-for="link in topLinkList")
-          a(:href="link.link") {{link.text}}
-      ul.language
-        li(v-for="lang in languageList")
-          a.language-link(:href="lang.link", :class="{'active': lang.active}") {{lang.text}}
-    div.logo-block
-      a(:href="logoLink")
-        img(:src="logo").logo
-        span.text(v-html="logoText")
-    div.top-nav-block
-      div.search-input-block
-        input.search-input(:placeholder="searchPlaceholder", :class="{'active': searchActive}", v-model.lazy.trim="searchValue", v-on:keyup.enter="searchResultFn()")
-        span.search(v-on:click="searchActiveFn")
-      ul
-        li(v-for="nav in topNavList")
-          a(:href="nav.link") {{nav.text}}
-    div.content
-      hp
-</template>
+<template src="./App.html"></template>
+
+<style lang="sass" scoped src="./App.sass"></style>
 
 <script>
-import Hp from './components/Hp.vue'
+import HomePage from './components/HomePage.vue'
 
 export default {
   name: 'app',
   components: {
-    Hp
+    HomePage
   },
   data () {
     return {
@@ -71,6 +51,3 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
-  @import "./App"
-</style>

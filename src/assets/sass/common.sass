@@ -1,5 +1,5 @@
-@import "./vars"
-@import "./mixins"
+@import "./vars/vars"
+@import "./vendors/vendors"
 
 /* ********************* Common Styles ************************** */
 h1, h2, h3, h4, h5, h6
@@ -34,18 +34,18 @@ textarea
   font-family: $font-regular
 
 button
-  font-size: $font-xs
   cursor: pointer
+  font-size: $font-xs
 
 input
+  border: 1px solid $color-text
   font-size: $font-s
   padding: 5px 10px
-  border: 1px solid $color-text
 
 div, p, a
+  color: $color-text
   font-family: $font-common
   font-size: $font-s
-  color: $color-text
 
 a
   text-decoration: none
@@ -53,17 +53,19 @@ a
   &:hover
     opacity: 0.7
 
+header
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 10px
+
 .container
   margin: 0 auto
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
+  height: 100vh
 
 .wrapper
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
   align-items: center
+  display: flex
+  flex-wrap: wrap
   justify-content: center
 
 .text-white
@@ -74,72 +76,17 @@ a
 .fade-enter, .fade-leave-to
   opacity: 0
 
-.v-carousel
-  width: 100%
-  overflow: hidden
-  position: static
-
-.v-carousel-items
-  overflow: hidden
-  display: flex
-
-.v-carousel-item
-  position: relative
-
-.v-carousel-dots
-  position: absolute
-  bottom: 15px
-  left: 0
-  width: 100%
-  text-align: center
-
-.v-carousel-dot
-  cursor: pointer
-  display: inline-block
-  width: 4px
-  height: 4px
-  margin: 0 10px
-  background: rgba(255, 255, 255, 0.5)
-  &.active
-    background: $color-white
-    cursor: default
-  &:before
-    content: ''
-    width: 10px
-    height: 10px
-    display: block
-    margin-top: -4px
-    margin-left: -4px
-
-.v-carousel-nav
-  display: none
-  cursor: pointer
-  position: absolute
-  line-height: 30px
-  color: #FFF
-  padding: 0 5px
-  background: rgba(0, 0, 0, 0.5)
-  top: 50%
-  margin-top: -15px
-  &.prev
-    left: 0
-  &.next
-    right: 0
-
-/* ************************ Desktop version ************************ */
-@media only screen and (min-width: $desktop-min-width)
-  .hide-desktop
+/* ************************** Mobile version ************************* */
+@media only screen and (max-width: $mobile-max-width)
+  .hide-mobile
     display: none
-
-  .container
-    max-width: $desktop-width-container
 
 /* *************************** Tablet version ************************* */
 @media only screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width)
   .hide-tablet
     display: none
 
-/* ************************** Mobile version ************************* */
-@media only screen and (max-width: $mobile-max-width)
-  .hide-mobile
+/* ************************ Desktop version ************************ */
+@media only screen and (min-width: $desktop-min-width)
+  .hide-desktop
     display: none

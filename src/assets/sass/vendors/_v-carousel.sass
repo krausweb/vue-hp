@@ -1,0 +1,53 @@
+@import "../vars/vars"
+
+.v-carousel
+  position: static
+  overflow: hidden
+  width: 100%
+
+.v-carousel-items
+  display: flex
+  overflow: hidden
+
+.v-carousel-item
+  position: relative
+
+.v-carousel-dots
+  bottom: 15px
+  position: absolute
+  left: 0
+  text-align: center
+  width: 100%
+
+.v-carousel-dot
+  background: rgba(255, 255, 255, 0.5)
+  cursor: pointer
+  display: inline-block
+  margin: 0 10px
+  height: 4px
+  width: 4px
+  &.active
+    background: $color-white
+    cursor: default
+  &:before
+    content: ''
+    display: block
+    margin-top: -4px
+    margin-left: -4px
+    height: 10px
+    width: 10px
+
+.v-carousel-nav
+  background: rgba(0, 0, 0, 0.5)
+  cursor: pointer
+  color: $color-white
+  display: none
+  position: absolute
+  line-height: 30px
+  padding: 0 5px
+  margin-top: -15px
+  top: 50%
+  &.prev
+    left: 0
+  &.next
+    right: 0

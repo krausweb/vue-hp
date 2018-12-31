@@ -1,32 +1,34 @@
-@import "./assets/sass/vars"
+@import "./assets/sass/vars/vars"
+
+/* ****************** Only App vars ********************* */
+$img_search: '/dist/assets/images/search.png'
 
 /* *************** Common version ********************* */
 .top-links-language-block
-  padding: 21px 25px 15px 25px
+  padding: 23px 35px 10px
   .top-links
+    display: inline-block
     font-family: $font-common
     font-size: $font-s
-    display: inline-block
   .language
     display: inline-block
+    padding-left: 35px
     text-transform: uppercase
-    padding-left: 25px
     li
       padding: 0
   .language-link
-    padding: 6px
-    border: 1px solid $color-text
-    opacity: 0.3
     background-color: $color-gray
+    border: 1px solid $color-text
+    padding: 4px
+    opacity: 0.3
     &.active
-      opacity: 1
       background-color: initial
+      opacity: 1
       &:hover
         opacity: 0.7
 
 .logo-block
-  padding-left: 25px
-  padding-bottom: 7px
+  padding-left: 35px
   a
     display: inline-block
     width: 160px
@@ -35,12 +37,13 @@
     width: 160px
   .text
     font-family: $font-light
+    line-height: 33px
 
 .top-nav-block
   align-self: flex-end
-  text-transform: uppercase
   flex-grow: 1
   line-height: 30px
+  text-transform: uppercase
   .search-input-block
     display: inline-block
     .search-input
@@ -51,22 +54,104 @@
       &:before
         background: url($img_search) no-repeat 0 0
         background-size: 100% auto
-        width: 22px
-        height: 23px
-        display: inline-block
-        vertical-align: middle
         content: ""
         cursor: pointer
+        display: inline-block
+        vertical-align: middle
+        height: 23px
+        width: 22px
       &:hover
         opacity: 0.7
   ul
     display: inline-block
-    li
-      line-height: $font-s
+    li,
+    a
+      font-size: $font-m
+      line-height: 16px
 
-.content
-  flex-basis: 100%
-  padding-top: 10px
+/* ************************** Mobile version ************************* */
+@media only screen and (max-width: $mobile-max-width)
+  .logo-block
+    flex-basis: 100%
+    padding-top: 21px
+    order: 1
+
+  .top-links-language-block
+    flex-basis: 100%
+    order: 2
+    .top-links
+      line-height: 30px
+      width: 70%
+      vertical-align: middle
+    .language
+      box-sizing: border-box
+      line-height: 30px
+      text-align: right
+      width: 30%
+      vertical-align: middle
+
+  .top-nav-block
+    flex-basis: 100%
+    padding-left: 25px
+    padding-right: 25px
+    order: 3
+    .search-input-block
+      padding-bottom: 15px
+      width: 100%
+      .search-input
+        width: 90%
+        vertical-align: middle
+      .search
+        text-align: right
+        width: 10%
+    ul
+      width: 100%
+      li:nth-child(even)
+        border-left: 1px solid $color-text
+        padding-left: $li-padding
+
+  main
+    order: 4
+
+/* *************************** Tablet version ************************* */
+@media only screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width)
+  .logo-block
+    padding-top: 21px
+    order: 1
+
+  .top-links-language-block
+    flex-grow: 1
+    order: 2
+    text-align: right
+
+  .top-nav-block
+    font-size: 0
+    order: 3
+    text-align: right
+    .search-input-block
+      box-sizing: border-box
+      padding-left: 25px
+      text-align: left
+      width: 39%
+      .search-input
+        max-width: 200px
+      .search
+        box-sizing: border-box
+        padding-left: 25px
+    ul
+      box-sizing: border-box
+      padding-right: 25px
+      width: 61%
+      vertical-align: middle
+      li
+        padding-left: $li-padding
+        padding-right: 0
+        &:not(:first-child)
+          border-left: 1px solid $color-text
+          margin-left: $li-padding
+
+  main
+    order: 4
 
 /* ************************ Desktop version ************************ */
 @media only screen and (min-width: $desktop-min-width)
@@ -75,105 +160,21 @@
     text-align: right
 
   .top-nav-block
+    padding-right: 35px
+    line-height: 33px
     text-align: right
-    padding-right: 25px
     .search-input-block
       .search-input
-        width: 200px
-        visibility: hidden
         opacity: 0
         transition: visibility 0s, opacity .5s
+        width: 200px
+        visibility: hidden
         &.active
-          visibility: visible
           opacity: 1
+          visibility: visible
       .search
         margin-left: 25px
         margin-right: 25px
     li
-      padding-left: $li-padding
-      border-left: 1px solid $color-text
-
-/* *************************** Tablet version ************************* */
-@media only screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width)
-  .logo-block
-    order: 1
-    padding-top: 21px
-
-  .top-links-language-block
-    order: 2
-    flex-grow: 1
-    text-align: right
-
-  .top-nav-block
-    order: 3
-    text-align: right
-    .search-input-block
-      padding-left: 25px
-      box-sizing: border-box
-      width: 39%
-      text-align: left
-      .search-input
-        max-width: 200px
-      .search
-        box-sizing: border-box
-        padding-left: 25px
-    ul
-      box-sizing: border-box
-      width: 61%
-      vertical-align: middle
-      padding-right: 25px
-      li
-        padding-left: $li-padding
-        padding-right: 0
-        margin-left: $li-padding
-        border-left: 1px solid $color-text
-        &:first-child
-          margin-left: 0
-          border-left: 0
-
-  .content
-    order: 4
-
-/* ************************** Mobile version ************************* */
-@media only screen and (max-width: $mobile-max-width)
-  .logo-block
-    order: 1
-    flex-basis: 100%
-    padding-top: 21px
-
-  .top-links-language-block
-    flex-basis: 100%
-    order: 2
-    .top-links
-      width: 70%
-      vertical-align: middle
-      line-height: 30px
-    .language
-      width: 30%
-      box-sizing: border-box
-      text-align: right
-      vertical-align: middle
-      line-height: 30px
-
-  .top-nav-block
-    order: 3
-    flex-basis: 100%
-    padding-left: 25px
-    padding-right: 25px
-    .search-input-block
-      width: 100%
-      padding-bottom: 15px
-      .search-input
-        width: 90%
-        vertical-align: middle
-      .search
-        width: 10%
-        text-align: right
-    ul
-      width: 100%
-      li:nth-child(even)
-        padding-left: $li-padding
-        border-left: 1px solid $color-text
-
-  .content
-    order: 4
+      border-left: 2px solid $color-text
+      padding-left: 28px

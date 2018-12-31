@@ -1,0 +1,198 @@
+@import "../assets/sass/vars/vars"
+
+/* ****************** Only HomePage vars ********************* */
+$img_banner_top: '/dist/assets/images/banner_top.png'
+$img_banner_left: '/dist/assets/images/banner_left.png'
+$img_banner_right: '/dist/assets/images/banner_right.png'
+
+/* *************** Common version ********************* */
+.banner
+  display: inline-block
+  position: relative
+  height: 400px
+  &:before
+    content: ""
+    display: inline-block
+    height: 400px
+  &.-only-text
+    background-color: $color-text
+    > .inner-content
+      align-items: flex-start
+    .-main
+      padding-top: 0
+      text-align: left
+    .-detail
+      padding-top: 20px
+      text-align: left
+    .-button
+      padding-top: 30px
+      .link
+        display: block
+        margin-top: 5px
+        margin-right: 0
+  &.-top:before
+    background: url($img_banner_top) no-repeat 0 0
+    background-size: 100% 100%
+    width: 100%
+  &.-left:before
+    background: url($img_banner_left) no-repeat 0 0
+    background-size: 100% 100%
+    width: 100%
+  &.-right:before
+    background: url($img_banner_right) no-repeat 0 0
+    background-size: 100% 100%
+    width: 100%
+
+.slider
+  display: inline-block
+  position: relative
+  height: 400px
+  .slide img
+    display: inline-block
+    height: 400px
+    width: 100%
+
+.inner-content
+  align-items: center
+  box-sizing: border-box
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: absolute
+  height: 100%
+  width: 100%
+  bottom: 0
+  top: 0
+  left: 0
+  right: 0
+
+.text
+  color: $color-white
+  max-width: 450px
+  overflow: hidden
+  text-align: center
+  &.-links
+    line-height: 20px
+    text-transform: uppercase
+    li
+      border-left: 1px solid $color-white
+      line-height: 14px
+      padding-left: 10px
+      padding-right: 10px
+      &:last-child
+        border-right: 1px solid $color-white
+        padding-right: 10px
+    .link
+      color: $color-white
+      font-family: $font-medium
+  &.-main
+    font-family: $font-medium
+    font-size: $font-xl
+    line-height: 30px
+  &.-detail
+    font-family: $font-common
+    font-size: $font-s
+    line-height: 23px
+  &.-button
+    .link
+      border: 1px solid $color-white
+      color: $color-white
+      cursor: pointer
+      display: inline-block
+      font-family: $font-regular
+      font-size: $font-xs
+      line-height: 30px
+      margin-right: 5px
+      padding: 0 15px
+      text-transform: uppercase
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-right: 0
+
+/* ************************** Mobile version ************************* */
+@media only screen and (max-width: $mobile-max-width)
+  .banner
+    &.-only-text,
+    &.-top,
+    &.-left,
+    &.-right
+      margin-bottom: 1px
+      margin-top: 1px
+      width: 100%
+
+  .slider
+    &.-only-text,
+    &.-top,
+    &.-left,
+    &.-right
+      margin-bottom: 1px
+      margin-top: 1px
+      width: 100%
+
+  .inner-content
+    padding: 10px
+
+  .text
+    &.-links,
+    &.-main,
+    &.-detail,
+    &.-button
+      padding-top: 20px
+
+/* *************************** Tablet version ************************* */
+@media only screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width)
+  .banner,
+  .slider
+    &.-only-text
+      margin: 0 0 1px 1px
+      flex-basis: 49.5%
+    &.-top
+      margin: 0 1px 1px 0
+      flex-basis: 49.5%
+    &.-left
+      margin: 1px 1px 0 0
+      flex-basis: 49.5%
+    &.-right
+      margin: 1px 0 0 1px
+      flex-basis: 49.5%
+
+  .inner-content
+    padding: 33px
+
+  .text
+    &.-links,
+    &.-main
+      padding-top: 20px
+    &.-detail,
+    &.-button
+      padding-top: 25px
+
+/* ************************ Desktop version ************************ */
+@media only screen and (min-width: $desktop-min-width)
+  .banner,
+  .slider
+    &.-only-text
+      margin: 0 0 1px 1px
+      flex-basis: 24.5%
+    &.-top
+      margin: 0 1px 1px 0
+      flex-basis: 74.5%
+    &.-left
+      margin: 1px 1px 0 0
+      flex-basis: 49.5%
+    &.-right
+      margin: 1px 0 0 1px
+      flex-basis: 49.5%
+
+  .inner-content
+    padding: 33px
+
+  .text
+    &.-links
+      padding-top: 5px
+    &.-main
+      padding-top: 30px
+    &.-detail,
+    &.-button
+      padding-top: 30px
