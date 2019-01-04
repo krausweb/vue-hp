@@ -32,7 +32,7 @@ export default {
       searchPlaceholder: 'Search...',
       searchActive: false,
       searchValue: '',
-      active: 'active'
+      active: '-active'
     }
   },
   methods: {

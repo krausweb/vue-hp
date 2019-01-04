@@ -1,26 +1,26 @@
 <div class="container" id="app">
   <header>
-    <div class="top-links-language-block">
+    <div class="top-block">
       <ul class="top-links">
         <li v-for="link in topLinkList"><a :href="link.link">{{link.text}}</a></li>
       </ul>
-      <ul class="language">
+      <ul class="top-language">
         <li v-for="lang in languageList">
-          <a class="language-link" :href="lang.link" :class="{'active': lang.active}">{{lang.text}}</a>
+          <a class="top-language-link" :href="lang.link" :class="{'-active': lang.active}">{{lang.text}}</a>
         </li>
       </ul>
     </div>
     <div class="logo-block">
       <a :href="logoLink">
-        <img class="logo" :src="logo"/>
-        <span class="text" v-html="logoText"></span>
+        <img class="logo-img" :src="logo"/>
+        <span class="logo-text" v-html="logoText"></span>
       </a>
     </div>
-    <div class="top-nav-block">
-      <div class="search-input-block">
-        <input class="search-input" :class="{'active': searchActive}" :placeholder="searchPlaceholder"
+    <div class="nav-block">
+      <div class="nav-search">
+        <input class="nav-search-input" :class="{'-active': searchActive}" :placeholder="searchPlaceholder"
                v-model.lazy.trim="searchValue" v-on:keyup.enter="searchResultFn()"/>
-        <span class="search" v-on:click="searchActiveFn"></span>
+        <span class="nav-search-icon" v-on:click="searchActiveFn"></span>
       </div>
       <ul>
         <li v-for="nav in topNavList"><a :href="nav.link">{{nav.text}}</a></li>
