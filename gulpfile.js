@@ -13,8 +13,8 @@ const gulp = require('gulp'),
   ttf2eot = require('gulp-ttf2eot')
 
 const paths = {
-  srcJsVendor: ['./node_modules/highcharts/highcharts.js'],
-  srcCssVendor: ['./node_modules/normalize.css/normalize.css', './node_modules/highcharts/css/highcharts.css'],
+  srcJsVendor: [],
+  srcCssVendor: ['./node_modules/normalize.css/normalize.css'],
   srcSass: ['./src/assets/common.sass', './src/assets/sass/**/*'],
   srcImg: './src/assets/images/**/*',
   srcFonts: './src/assets/fonts/*.ttf',

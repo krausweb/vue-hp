@@ -3,6 +3,9 @@
 // This is done with the browser options. For the config, see package.json
 import Vue from 'vue'
 import App from './App.vue'
+import HighchartsVue from 'highcharts-vue'
+
+Vue.use(HighchartsVue, {tagName: 'chart'})
 
 new Vue({ // eslint-disable-line no-new
   el: '#app',

@@ -9,6 +9,7 @@
     "serve": "http-server -o -c 1 -a localhost",
     "dev": "npm-run-all --parallel watchify serve",
     "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint . --ext .js,.vue --fix",
     "build": "cross-env NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o dist/build.css ] -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js"
   },
   "browserify": {
@@ -25,14 +26,15 @@
     "del": "^3.0.0",
     "ecstatic": "^3.3.0",
     "gulp-sourcemaps": "^2.6.4",
-    "highcharts": "^6.2.0",
+    "highcharts": "^7.0.1",
+    "highcharts-vue": "^1.2.0",
     "normalize.css": "^7.0.0",
     "vue": "^2.5.21",
     "vue-l-carousel": "^1.1.0",
-    "vue-loader": "^15.4.2"
+    "vue-loader": "^15.5.0"
   },
   "devDependencies": {
-    "acorn": "^6.0.4",
+    "acorn": "^6.0.5",
     "ajv": "^6.6.2",
     "autoprefixer": "^7.2.6",
     "babel-core": "^6.0.0",

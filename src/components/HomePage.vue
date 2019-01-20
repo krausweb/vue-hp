@@ -81,7 +81,50 @@ export default {
           textMain: 'Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?',
           textDetail: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...'
         }
-      ]
+      ],
+      chartOptions: {
+        chart: {
+          type: 'bar'
+        },
+        title: {
+          text: 'Points scored',
+          align: 'left',
+          x: 50,
+          style: {
+            'fontWeight': 'bold'
+          }
+        },
+        xAxis: {
+          categories: ['Team 1', 'Team 2', 'Team 3', 'Team 4']
+        },
+        yAxis: {
+          min: 1,
+          max: 100,
+          title: false
+        },
+        legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          y: 30,
+          squareSymbol: false,
+          symbolRadius: 0,
+          symbolWidth: 25,
+          itemMarginBottom: 5,
+          itemStyle: {
+            'fontWeight': 'normal'
+          }
+        },
+        series: [{
+          name: 'Period 1',
+          data: [24, 36, 9, 38],
+          color: '#5e97f6'
+        }, {
+          name: 'Period 2',
+          data: [85, 24, 37, 63],
+          color: '#1c4587'
+        }]
+      }
     }
   }
 }
